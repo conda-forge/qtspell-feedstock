@@ -30,10 +30,10 @@ requirements:
     - {{ cdt('libxext') }}     # [linux]
   host:
     - xorg-libxfixes  # [linux]
-    - qt
+    - qt-main
     - enchant
   run:
-    - qt
+    - qt-main
     - enchant
 
 test:
