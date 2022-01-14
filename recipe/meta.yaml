@@ -20,6 +20,7 @@ requirements:
     - cmake
     - ninja
     - pkg-config
+    - doxygen
     - {{ compiler('cxx') }}
     - {{ cdt('mesa-libgl-devel') }}  # [linux]
     - {{ cdt('mesa-dri-drivers') }}  # [linux]
