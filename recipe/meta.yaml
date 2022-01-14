@@ -1,5 +1,5 @@
 {% set name = "qtspell" %}
-{% set version = "0.9.0" %}
+{% set version = "1.0.1" %}
 
 package:
   name: {{ name }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/manisandro/qtspell/archive/refs/tags/{{ version }}.tar.gz
-  sha256: 49a5ab995c3150572c3c48989cd3e506b0c2d64b09d80fb5b30daa7325445635
+  sha256: 03bb9ef504dff352e162b91e9da89fb34d236e01da54799db69388dc9ceea4c2
 
 build:
   number: 0
@@ -44,7 +44,7 @@ about:
   license: GPL-3.0-only
   license_family: GPL3
   license_file: COPYING
-  summary:  Spell checking for Qt text widgets
+  summary: Spell checking for Qt text widgets
 
 extra:
   recipe-maintainers:
