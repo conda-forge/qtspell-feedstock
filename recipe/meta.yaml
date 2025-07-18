@@ -1,5 +1,5 @@
 {% set name = "qtspell" %}
-{% set version = "1.0.1" %}
+{% set version = "1.0.2" %}
 
 package:
   name: {{ name }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://github.com/manisandro/qtspell/archive/refs/tags/{{ version }}.tar.gz
-  sha256: 03bb9ef504dff352e162b91e9da89fb34d236e01da54799db69388dc9ceea4c2
+  sha256: faa7add9d771350a63e66bb6c9b91b130097c2399f6f85c2a9a0ea8e0ceb79d8
 
 build:
-  number: 1
+  number: 0
   skip: true  # [not linux]
   run_exports:
     - {{ pin_subpackage('qtspell', max_pin='x.x') }}
@@ -22,6 +22,7 @@ requirements:
     - pkg-config
     - doxygen
     - {{ compiler('cxx') }}
+    - {{ stdlib("c") }}
     - {{ cdt('mesa-libgl-devel') }}  # [linux]
     - {{ cdt('mesa-dri-drivers') }}  # [linux]
     - {{ cdt('libselinux') }}  # [linux]
