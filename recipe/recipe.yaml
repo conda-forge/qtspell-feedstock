@@ -1,0 +1,51 @@
+context:
+  version: "1.0.1"
+
+package:
+  name: qtspell
+  version: ${{ version }}
+
+source:
+  url: https://github.com/manisandro/qtspell/archive/refs/tags/${{ version }}.tar.gz
+  sha256: 03bb9ef504dff352e162b91e9da89fb34d236e01da54799db69388dc9ceea4c2
+
+build:
+  number: 2
+  skip: win
+
+requirements:
+  build:
+    - ${{ compiler('cxx') }}
+    - ${{ compiler('c') }}
+    - ${{ stdlib('c') }}
+    - cmake
+    - ninja
+    - pkg-config
+    - doxygen
+  host:
+    - if: linux
+      then:
+        - libgl-devel
+        - xorg-libxfixes
+    - if: osx
+      then: libintl-devel
+    - qt-main
+    - enchant
+  run:
+    - qt-main
+  run_exports:
+    - ${{ pin_subpackage('qtspell', upper_bound='x.x') }}
+
+tests:
+  - script:
+      - test -f $PREFIX/lib/libqtspell-qt5${SHLIB_EXT}
+
+about:
+  license: GPL-3.0-only
+  license_file: COPYING
+  summary: Spell checking for Qt text widgets
+  homepage: https://github.com/manisandro/qtspell
+
+extra:
+  recipe-maintainers:
+    - izahn
