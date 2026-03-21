@@ -11,7 +11,7 @@ source:
 
 build:
   number: 2
-  skip: true  # [not linux]
+  skip: true  # [win]
   run_exports:
     - {{ pin_subpackage('qtspell', max_pin='x.x') }}
 
@@ -27,18 +27,18 @@ requirements:
     - qt-main
     - enchant
     - libgl-devel                    # [linux]
+    - libintl-devel    # [osx]
   run:
     - qt-main
     - enchant
 
 test:
   commands:
-    - test -f $PREFIX/lib/libqtspell-qt5.so
+    - test -f $PREFIX/lib/libqtspell-qt5${SHLIB_EXT}
 
 about:
   home: https://github.com/manisandro/qtspell
   license: GPL-3.0-only
-  license_family: GPL3
   license_file: COPYING
   summary: Spell checking for Qt text widgets
 
