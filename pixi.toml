@@ -5,7 +5,7 @@
 
 [workspace]
 name = "qtspell-feedstock"
-version = "3.57.0"  # conda-smithy version used to generate this file
+version = "3.58.0"  # conda-smithy version used to generate this file
 description = "Pixi configuration for conda-forge/qtspell-feedstock"
 authors = ["@conda-forge/qtspell"]
 channels = ["conda-forge"]
